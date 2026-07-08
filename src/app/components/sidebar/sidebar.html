@@ -1,0 +1,64 @@
+<nav class="flex flex-col gap-1 pr-4 w-56 border-r border-border h-full overflow-y-auto">
+
+    <a routerLink="/" routerLinkActive="bg-primary text-white" [routerLinkActiveOptions]="{exact: true}"
+        #rlaHome="routerLinkActive"
+        class="group px-3 py-2 rounded-lg text-slate-700 hover:bg-indigo-600 hover:text-white transition flex items-center gap-2">
+        <span [class]="rlaHome.isActive ? 'text-white' : 'text-primary group-hover:text-white'"
+            class="w-[18px] h-[18px] bg-current [mask-image:url('/icons/home.svg')] [mask-size:contain] [mask-repeat:no-repeat]"></span>
+        Home
+    </a>
+
+    <a routerLink="/recipes" routerLinkActive="bg-primary text-white" #rlaRecipes="routerLinkActive"
+        class="group px-3 py-2 rounded-lg text-slate-700 hover:bg-indigo-600 hover:text-white transition flex items-center gap-2">
+        <span [class]="rlaRecipes.isActive ? 'text-white' : 'text-primary group-hover:text-white'"
+            class="w-[18px] h-[18px] bg-current [mask-image:url('/icons/book.svg')] [mask-size:contain] [mask-repeat:no-repeat]"></span>
+        Recipes
+    </a>
+
+    <a routerLink="/categories/1" routerLinkActive="bg-primary text-white" #rlaCategories="routerLinkActive"
+        class="group px-3 py-2 rounded-lg text-slate-700 hover:bg-indigo-600 hover:text-white transition flex items-center gap-2">
+        <span [class]="rlaCategories.isActive ? 'text-white' : 'text-primary group-hover:text-white'"
+            class="w-[18px] h-[18px] bg-current [mask-image:url('/icons/grid.svg')] [mask-size:contain] [mask-repeat:no-repeat]"></span>
+        Categories
+    </a>
+
+    <span class="px-3 py-2 rounded-lg text-neutral-400 cursor-not-allowed flex items-center gap-2"
+        title="Requires login">
+        <span
+            class="w-[18px] h-[18px] bg-current [mask-image:url('/icons/heart.svg')] [mask-size:contain] [mask-repeat:no-repeat] text-primary"></span>
+        Favorites
+    </span>
+    <span class="px-3 py-2 rounded-lg text-neutral-400 cursor-not-allowed flex items-center gap-2"
+        title="Requires login">
+        <span
+            class="w-[18px] h-[18px] bg-current [mask-image:url('/icons/calendar.svg')] [mask-size:contain] [mask-repeat:no-repeat] text-primary"></span>
+        Meal Plan
+    </span>
+    <span class="px-3 py-2 rounded-lg text-neutral-400 cursor-not-allowed flex items-center gap-2"
+        title="Requires login">
+        <span
+            class="w-[18px] h-[18px] bg-current [mask-image:url('/icons/cart.svg')] [mask-size:contain] [mask-repeat:no-repeat] text-primary"></span>
+        Shopping List
+    </span>
+    <span class="px-3 py-2 rounded-lg text-neutral-400 cursor-not-allowed flex items-center gap-2"
+        title="Requires login">
+        <span
+            class="w-[18px] h-[18px] bg-current [mask-image:url('/icons/user.svg')] [mask-size:contain] [mask-repeat:no-repeat] text-primary"></span>
+        My Recipes
+    </span>
+    <span class="px-3 py-2 rounded-lg text-neutral-400 cursor-not-allowed flex items-center gap-2"
+        title="Requires login">
+        <span
+            class="w-[18px] h-[18px] bg-current [mask-image:url('/icons/settings.svg')] [mask-size:contain] [mask-repeat:no-repeat] text-primary"></span>
+        Settings
+    </span>
+
+    <div class="flex-1"></div>
+
+    <span class="px-3 py-2 rounded-lg text-neutral-400 cursor-not-allowed flex items-center gap-2"
+        title="Requires login">
+        <span
+            class="w-[18px] h-[18px] bg-current [mask-image:url('/icons/logout.svg')] [mask-size:contain] [mask-repeat:no-repeat] text-primary"></span>
+        Log out
+    </span>
+</nav>
