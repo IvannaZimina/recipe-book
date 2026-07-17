@@ -1,13 +1,19 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
+# Angular specific
+/dist/
+/out-tsc/
+/tmp/
+/coverage/
+/e2e/test-output/
+/.angular/
+.angular/
 /bazel-out
 
-# Node
-/node_modules
+# Node modules and dependency files
+/node_modules/
+/package-lock.json
+/yarn.lock
 npm-debug.log
 yarn-error.log
 
@@ -45,3 +51,18 @@ Thumbs.db
 
 # Additional files
 roadmap.md
+
+# Environment files
+/.env
+
+# Angular CLI and build artefacts
+/.angular-cli.json
+/.ng/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
