@@ -7,13 +7,7 @@
     @if (recipes$ | async; as recipes) {
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         @for (recipe of recipes.slice(0, 4); track recipe._id) {
-        <div class="bg-surface border border-border rounded-xl overflow-hidden shadow-sm">
-            <img [src]="recipe.image" [alt]="recipe.title" class="w-full aspect-square object-cover" />
-            <div class="p-4">
-                <h3 class="font-semibold text-slate-900">{{ recipe.title }}</h3>
-                <p class="text-sm text-slate-500">{{ recipe.cookingTime }} min · {{ recipe.difficulty }}</p>
-            </div>
-        </div>
+        <app-recipe-card [recipe]="recipe" />
         }
     </div>
     }

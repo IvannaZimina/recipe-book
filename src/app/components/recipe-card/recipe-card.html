@@ -1,0 +1,7 @@
+<div class="bg-surface border border-border rounded-xl overflow-hidden shadow-sm">
+    <img [src]="recipe.image" [alt]="recipe.title" class="w-full aspect-square object-cover" />
+    <div class="p-4">
+        <h3 class="font-semibold text-slate-900">{{ recipe.title }}</h3>
+        <p class="text-sm text-slate-500">{{ recipe.cookingTime }} min · {{ recipe.difficulty }}</p>
+    </div>
+</div>
