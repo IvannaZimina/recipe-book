@@ -1,23 +1,20 @@
 <section class="max-w-6xl mx-auto px-6 pb-10">
-    <h2 class="text-slate-900 mb-6">Popular Recipes</h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-surface border border-border rounded-xl p-4 shadow-sm">
-            <div class="bg-neutral-200 h-32 rounded-lg mb-3"></div>
-            <h3 class="font-semibold text-slate-900">Greek Salad</h3>
-            <p class="text-sm text-slate-500">15 min · Easy</p>
-        </div>
-
-        <div class="bg-surface border border-border rounded-xl p-4 shadow-sm">
-            <div class="bg-neutral-200 h-32 rounded-lg mb-3"></div>
-            <h3 class="font-semibold text-slate-900">Pasta Carbonara</h3>
-            <p class="text-sm text-slate-500">30 min · Medium</p>
-        </div>
-
-        <div class="bg-surface border border-border rounded-xl p-4 shadow-sm">
-            <div class="bg-neutral-200 h-32 rounded-lg mb-3"></div>
-            <h3 class="font-semibold text-slate-900">Chocolate Cake</h3>
-            <p class="text-sm text-slate-500">1h 20 min · Hard</p>
-        </div>
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-slate-900">Popular Recipes 🔥</h2>
+        <a routerLink="/recipes" class="text-primary text-sm hover:underline">View all</a>
     </div>
+
+    @if (recipes$ | async; as recipes) {
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        @for (recipe of recipes.slice(0, 4); track recipe._id) {
+        <div class="bg-surface border border-border rounded-xl overflow-hidden shadow-sm">
+            <img [src]="recipe.image" [alt]="recipe.title" class="w-full aspect-square object-cover" />
+            <div class="p-4">
+                <h3 class="font-semibold text-slate-900">{{ recipe.title }}</h3>
+                <p class="text-sm text-slate-500">{{ recipe.cookingTime }} min · {{ recipe.difficulty }}</p>
+            </div>
+        </div>
+        }
+    </div>
+    }
 </section>

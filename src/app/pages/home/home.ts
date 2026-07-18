@@ -1,9 +1,22 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { AsyncPipe } from '@angular/common';
+import { RecipeService } from '../../services/recipe';
+import { Recipe } from '../../models/recipe.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterLink, AsyncPipe],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {}
+export class Home {
+  // Expose the Observable directly — the async pipe in the template
+  // will subscribe/unsubscribe automatically and safely trigger view updates
+  recipes$: Observable<Recipe[]>;
+
+  constructor(private recipeService: RecipeService) {
+    this.recipes$ = this.recipeService.getAll();
+  }
+}
